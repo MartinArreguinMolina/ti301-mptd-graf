@@ -21,6 +21,7 @@ public class Graph {
 
     public Graph(int vertex) {
         init();
+        setVertex(vertex);
     }
 
     private void init() {
@@ -30,38 +31,37 @@ public class Graph {
     }
 
     public void setVertex(int numVertex) {
-        for (int i = 0; i < numVertex; i++) {
+        for (int i = 0; i < numVertex; i++) 
             this.vertex[i] = i;
+        
 
-            this.numVertex = numVertex;
-        }
+        this.numVertex = numVertex;
     }
 
     public void setEdge(int i, int j) {
-        edge[numEdge][0] = i;
-        edge[numEdge][1] = j;
+        this.edge[numEdge][0] = i;
+        this.edge[numEdge][1] = j;
 
         numEdge++;
     }
-    
-    
-    public String toString(){
+
+    public String toString() {
         String out = "Graph ---------\n";
-        
+
         out += "vertices : [";
-        
-        for(int i = 0; i < numVertex; i++){
-            out += i + ", "; 
+
+        for (int i = 0; i < numVertex; i++) {
+            out += i + ", ";
         }
-        
+
         out += "edges : [";
-        
-        for(int i = 0; i < numEdge; i++){
-            out += "(" + edge[i][0] + ", " + edge[i][1] + "), "; 
+
+        for (int i = 0; i < numEdge; i++) {
+            out += "(" + edge[i][0] + ", " + edge[i][1] + "), ";
         }
-        
+
         out += "]\n";
-        
+
         return out;
     }
 
